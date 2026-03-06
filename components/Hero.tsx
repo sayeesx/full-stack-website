@@ -50,7 +50,7 @@ export const Hero = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.2 }}
-                            className="text-gray-500 text-xs md:text-lg max-w-sm md:max-w-2xl mx-auto leading-relaxed font-bold uppercase tracking-tight px-4"
+                            className="text-gray-500 text-xs md:text-lg max-w-sm md:max-w-2xl mx-auto leading-relaxed font-bold uppercase tracking-tight px-3"
                         >
                             Experience the crunch that's taking over the city.<br /> Our signature broasted chicken is marinated for 24 hours and fried to golden perfection.
                         </motion.p>
@@ -92,7 +92,7 @@ export const Hero = () => {
                         <div className="hidden md:block w-px h-10 bg-gray-200" />
                         <div className="text-center min-w-[80px]">
                             <p className="text-2xl md:text-4xl font-black text-brand-blue leading-none">
-                                <CountUp to={15} duration={2} />k+
+                                <CountUp to={15000} duration={2} separator="," />+
                             </p>
                             <p className="text-[10px] md:text-xs font-bold text-gray-400 uppercase tracking-widest mt-2 px-2">Happy Orders</p>
                         </div>

@@ -47,8 +47,8 @@ export const SignatureCombos = () => {
                     </motion.p>
                 </div>
 
-                <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
-                    {combos.slice(0, 3).map((combo, index) => (
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-10">
+                    {combos.slice(0, 4).map((combo, index) => (
                         <motion.div
                             key={combo.id}
                             initial={{ opacity: 0, scale: 0.9 }}
@@ -56,7 +56,7 @@ export const SignatureCombos = () => {
                             viewport={{ once: true, margin: "-50px" }}
                             transition={{ delay: index * 0.1 }}
                             whileHover={{ y: -5 }}
-                            className={`bg-blue-900/40 backdrop-blur-md rounded-2xl md:rounded-[2rem] border border-blue-400/30 overflow-hidden flex-col items-center justify-between p-4 md:p-6 text-center group aspect-square ${index >= 2 ? 'hidden lg:flex' : 'flex'}`}
+                            className={`bg-blue-900/40 backdrop-blur-md rounded-2xl md:rounded-[2.5rem] border border-blue-400/30 overflow-hidden flex-col items-center justify-between p-6 md:p-10 text-center group aspect-[4/3] md:aspect-square md:flex ${index >= 2 ? 'hidden' : 'flex'}`}
                             style={{ willChange: 'transform, opacity' }}
                         >
                             <div className="relative flex-grow flex items-center justify-center w-full mb-2 lg:mb-4 bg-blue-950/40 rounded-xl border border-blue-400/10">

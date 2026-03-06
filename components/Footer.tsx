@@ -15,7 +15,7 @@ export const Footer = () => {
     return (
         <footer className="bg-brand-blue text-white pt-10 md:pt-16 pb-6 md:pb-8">
             <div className="container mx-auto px-4 md:px-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-10 md:mb-16">
+                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8 md:gap-12 mb-10 md:mb-16">
                     {/* Brand Info */}
                     <div className="space-y-4 md:space-y-6">
                         <Link href="/" className="flex items-center gap-2">
@@ -73,45 +73,6 @@ export const Footer = () => {
                                 </li>
                             ))}
                         </ul>
-                    </div>
-
-                    {/* Contact Info */}
-                    <div>
-                        <h4 className="font-black text-sm md:text-lg mb-4 md:mb-6 uppercase tracking-wider hidden md:block">Contact Us</h4>
-
-                        {/* Desktop Contact List */}
-                        <ul className="hidden md:flex flex-col space-y-4">
-                            <li className="flex items-start gap-3">
-                                <MapPin className="text-brand-red shrink-0" size={16} />
-                                <span className="text-blue-100/80 text-sm">123 Fryer St, Crunch Valley, CV</span>
-                            </li>
-                            <li className="flex items-center gap-3">
-                                <Phone className="text-brand-red shrink-0" size={16} />
-                                <span className="text-blue-100/80 text-sm">+1 (555) 123-FRY</span>
-                            </li>
-                            <li className="flex items-center gap-3">
-                                <Mail className="text-brand-red shrink-0" size={16} />
-                                <span className="text-blue-100/80 text-sm">hello@chickrepublic.com</span>
-                            </li>
-                        </ul>
-
-                        {/* Mobile Contact Row */}
-                        <div className="flex md:hidden justify-between items-center bg-blue-900/40 p-4 rounded-2xl border border-blue-800">
-                            <a href="#" className="flex flex-col items-center text-blue-100/80 hover:text-white transition-colors">
-                                <Phone className="text-brand-red mb-1.5" size={20} />
-                                <span className="text-[10px] font-bold uppercase tracking-wider">Phone</span>
-                            </a>
-                            <div className="w-px h-8 bg-blue-800"></div>
-                            <a href="#" className="flex flex-col items-center text-blue-100/80 hover:text-white transition-colors">
-                                <MessageCircle className="text-brand-red mb-1.5" size={20} />
-                                <span className="text-[10px] font-bold uppercase tracking-wider">WhatsApp</span>
-                            </a>
-                            <div className="w-px h-8 bg-blue-800"></div>
-                            <a href="#" className="flex flex-col items-center text-blue-100/80 hover:text-white transition-colors">
-                                <MapPin className="text-brand-red mb-1.5" size={20} />
-                                <span className="text-[10px] font-bold uppercase tracking-wider">Location</span>
-                            </a>
-                        </div>
                     </div>
                 </div>
 

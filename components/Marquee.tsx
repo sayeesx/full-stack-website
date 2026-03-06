@@ -122,7 +122,7 @@ const Marquee: FC<MarqueeProps> = ({
             onPointerLeave={endDrag}
         >
             <svg
-                className="select-none w-full overflow-visible block aspect-[1440/50] text-3xl md:text-5xl font-black uppercase leading-none tracking-tighter"
+                className="select-none w-full overflow-visible block aspect-[1440/50] text-5xl md:text-5xl font-black uppercase leading-none tracking-tighter"
                 viewBox="0 0 1440 120"
                 preserveAspectRatio="xMidYMid slice"
             >

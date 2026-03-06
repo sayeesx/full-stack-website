@@ -21,38 +21,36 @@ export const ContactSection = () => {
                             </p>
                         </div>
 
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
-                            <div className="space-y-3 md:space-y-4">
-                                <div className="flex items-center gap-4 group justify-center lg:justify-start">
-                                    <div className="w-10 h-10 md:w-12 md:h-12 bg-red-50 text-brand-red rounded-xl flex items-center justify-center group-hover:bg-brand-red group-hover:text-white transition-colors duration-300">
-                                        <Phone size={20} className="md:w-6 md:h-6" />
-                                    </div>
-                                    <div>
-                                        <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Call Us</p>
-                                        <p className="text-brand-blue font-black text-base md:text-lg">+1 (555) 123-FRY</p>
-                                    </div>
-                                </div>
+                        {/* Desktop & Mobile Contact Links */}
+                        <div className="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 overflow-x-auto md:overflow-x-visible pb-4 md:pb-0 scrollbar-hide snap-x snap-mandatory">
 
-                                <div className="flex items-center gap-4 group justify-center lg:justify-start">
-                                    <div className="w-10 h-10 md:w-12 md:h-12 bg-blue-50 text-brand-blue rounded-xl flex items-center justify-center group-hover:bg-brand-blue group-hover:text-white transition-colors duration-300">
-                                        <MessageCircle size={20} className="md:w-6 md:h-6" />
-                                    </div>
-                                    <div>
-                                        <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest">WhatsApp</p>
-                                        <p className="text-brand-blue font-black text-base md:text-lg">+1 (555) 999-CRUNCH</p>
-                                    </div>
+                            <div className="flex-shrink-0 w-[85%] sm:w-auto snap-center flex items-center gap-4 group justify-start bg-red-50/50 p-4 md:p-0 rounded-2xl md:bg-transparent">
+                                <div className="w-10 h-10 md:w-12 md:h-12 bg-red-50 text-brand-red rounded-xl flex items-center justify-center shrink-0 group-hover:bg-brand-red group-hover:text-white transition-colors duration-300">
+                                    <Phone size={20} className="md:w-6 md:h-6" />
+                                </div>
+                                <div>
+                                    <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Call Us</p>
+                                    <p className="text-brand-blue font-black text-sm md:text-lg">+1 (555) 123-FRY</p>
                                 </div>
                             </div>
 
-                            <div className="space-y-4 md:space-y-6">
-                                <div className="flex items-center gap-4 group justify-center lg:justify-start">
-                                    <div className="w-10 h-10 md:w-12 md:h-12 bg-gray-50 text-gray-400 rounded-xl flex items-center justify-center group-hover:bg-brand-blue group-hover:text-white transition-colors duration-300">
-                                        <MapPin size={20} className="md:w-6 md:h-6" />
-                                    </div>
-                                    <div>
-                                        <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Location</p>
-                                        <p className="text-brand-blue font-black text-base md:text-lg">Crunch Valley, CV</p>
-                                    </div>
+                            <div className="flex-shrink-0 w-[85%] sm:w-auto snap-center flex items-center gap-4 group justify-start bg-blue-50/50 p-4 md:p-0 rounded-2xl md:bg-transparent">
+                                <div className="w-10 h-10 md:w-12 md:h-12 bg-blue-50 text-brand-blue rounded-xl flex items-center justify-center shrink-0 group-hover:bg-brand-blue group-hover:text-white transition-colors duration-300">
+                                    <MessageCircle size={20} className="md:w-6 md:h-6" />
+                                </div>
+                                <div>
+                                    <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest">WhatsApp</p>
+                                    <p className="text-brand-blue font-black text-sm md:text-lg">+1 (555) 999-CRUNCH</p>
+                                </div>
+                            </div>
+
+                            <div className="flex-shrink-0 w-[85%] sm:w-auto snap-center flex items-center gap-4 group justify-start bg-gray-50/50 p-4 md:p-0 rounded-2xl md:bg-transparent">
+                                <div className="w-10 h-10 md:w-12 md:h-12 bg-gray-50 text-gray-400 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-brand-blue group-hover:text-white transition-colors duration-300">
+                                    <MapPin size={20} className="md:w-6 md:h-6" />
+                                </div>
+                                <div>
+                                    <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Location</p>
+                                    <p className="text-brand-blue font-black text-sm md:text-lg">Crunch Valley, CV</p>
                                 </div>
                             </div>
                         </div>

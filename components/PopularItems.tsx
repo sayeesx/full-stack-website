@@ -10,6 +10,7 @@ import Link from 'next/link';
 
 export const PopularItems = () => {
     const popularItems = menuItems.filter(item => item.isPopular);
+    const [activeIndex, setActiveIndex] = React.useState(0);
 
     return (
         <section id="menu" className="pt-24 pb-12 bg-section-bg">
@@ -52,7 +53,18 @@ export const PopularItems = () => {
                 </div>
 
                 <div className="relative">
-                    <div className="flex md:grid md:grid-cols-4 gap-4 overflow-x-auto md:overflow-x-visible pb-4 md:pb-0 scrollbar-hide snap-x snap-mandatory">
+                    <div
+                        onScroll={(e) => {
+                            const target = e.target as HTMLDivElement;
+                            const scrollLeft = target.scrollLeft;
+                            const width = target.scrollWidth - target.clientWidth;
+                            if (width > 0) {
+                                const index = Math.round((scrollLeft / width) * 3);
+                                setActiveIndex(Math.min(3, Math.max(0, index)));
+                            }
+                        }}
+                        className="flex md:grid md:grid-cols-4 gap-4 overflow-x-auto md:overflow-x-visible pb-4 md:pb-0 scrollbar-hide snap-x snap-mandatory"
+                    >
                         {popularItems.slice(0, 4).map((item) => (
                             <div key={item.id} className="min-w-[45vw] md:min-w-0 snap-start flex-shrink-0">
                                 <FoodCard item={item} />
@@ -61,6 +73,23 @@ export const PopularItems = () => {
                     </div>
                     {/* Subtle white fade gradient for mobile scrollable indication */}
                     <div className="md:hidden absolute top-0 bottom-0 right-0 w-12 bg-gradient-to-l from-section-bg to-transparent pointer-events-none" />
+                </div>
+
+                {/* Mobile Dots Indicator */}
+                <div className="md:hidden flex justify-center gap-2 mt-4">
+                    {[0, 1, 2, 3].map((idx) => (
+                        <div
+                            key={idx}
+                            className={`h-1.5 rounded-full transition-all duration-300 ${activeIndex === idx ? 'w-6 bg-brand-red' : 'w-1.5 bg-gray-300'}`}
+                        />
+                    ))}
+                </div>
+
+                {/* Mobile Swipe Hint */}
+                <div className="md:hidden flex items-center justify-center mt-3 text-brand-red opacity-60 pointer-events-none">
+                    <span className="text-[10px] font-bold uppercase tracking-widest flex items-center gap-2">
+                        <span>&larr;</span> Swipe <span>&rarr;</span>
+                    </span>
                 </div>
 
                 {/* Mobile View Full Menu */}

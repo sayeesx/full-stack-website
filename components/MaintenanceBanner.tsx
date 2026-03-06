@@ -41,15 +41,21 @@ export const MaintenanceBanner = () => {
                     </p>
                 </div>
 
-                {/* Mobile View: Fade-In Text */}
-                <div className="flex md:hidden w-full items-center justify-center px-2">
+                {/* Mobile View: Slide Animation */}
+                <div className="flex md:hidden w-full items-center overflow-hidden">
                     <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 0.8, ease: "easeInOut" }}
-                        className="w-full"
+                        animate={{ x: ['0%', '-50%'] }}
+                        transition={{
+                            repeat: Infinity,
+                            duration: 15,
+                            ease: 'linear'
+                        }}
+                        className="flex whitespace-nowrap w-[200%]"
                     >
-                        <p className="text-[8px] font-black uppercase tracking-[0.1em] leading-tight text-center truncate">
+                        <p className="w-1/2 text-[8px] font-black uppercase tracking-[0.1em] leading-tight text-center">
+                            our store is currently under maintanence, bookings open once everythings ready, thanks for your patience
+                        </p>
+                        <p className="w-1/2 text-[8px] font-black uppercase tracking-[0.1em] leading-tight text-center">
                             our store is currently under maintanence, bookings open once everythings ready, thanks for your patience
                         </p>
                     </motion.div>
