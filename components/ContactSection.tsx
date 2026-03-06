@@ -65,7 +65,7 @@ export const ContactSection = () => {
                                 Google Map Integration
                             </div>
                             <img
-                                src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&q=80&w=800"
+                                src="/images/menu/placeholder.jpg"
                                 alt="Map Background"
                                 className="w-full h-full object-cover opacity-20 grayscale"
                             />

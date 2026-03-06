@@ -3,10 +3,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { AlertTriangle } from 'lucide-react';
+import { useCart } from '@/context/CartContext';
 
 export const MaintenanceBanner = () => {
     const [isVisible, setIsVisible] = React.useState(true);
     const lastScrollY = React.useRef(0);
+    const { isCartOpen } = useCart();
 
     React.useEffect(() => {
         const handleScroll = () => {
@@ -27,8 +29,8 @@ export const MaintenanceBanner = () => {
         <motion.div
             initial={{ y: 0, opacity: 1 }}
             animate={{
-                y: isVisible ? 0 : -32,
-                opacity: isVisible ? 1 : 0
+                y: isVisible && !isCartOpen ? 0 : -32,
+                opacity: isVisible && !isCartOpen ? 1 : 0
             }}
             transition={{ type: 'spring', damping: 20, stiffness: 120 }}
             className="fixed top-0 left-0 right-0 z-[200] w-full bg-brand-red text-white flex items-center overflow-hidden h-[32px] shadow-sm"

@@ -56,14 +56,16 @@ export const SignatureCombos = () => {
                             viewport={{ once: true, margin: "-50px" }}
                             transition={{ delay: index * 0.1 }}
                             whileHover={{ y: -5 }}
-                            className={`bg-blue-900/40 backdrop-blur-md rounded-2xl md:rounded-[2.5rem] border border-blue-400/30 overflow-hidden flex-col items-center justify-between p-6 md:p-10 text-center group aspect-[4/3] md:aspect-square md:flex ${index >= 2 ? 'hidden' : 'flex'}`}
+                            className={`bg-blue-900/40 backdrop-blur-md rounded-2xl md:rounded-[2.5rem] border border-blue-400/30 overflow-hidden flex-col items-center justify-between p-4 sm:p-6 md:p-10 text-center group md:flex w-full mx-auto ${index >= 2 ? 'hidden' : 'flex'}`}
                             style={{ willChange: 'transform, opacity' }}
                         >
-                            <div className="relative flex-grow flex items-center justify-center w-full mb-2 lg:mb-4 bg-blue-950/40 rounded-xl border border-blue-400/10">
-                                <div className="absolute inset-0 bg-brand-red/10 blur-[30px] rounded-full transform scale-75 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                                <div className="w-12 h-12 md:w-16 md:h-16 bg-blue-800/20 rounded-full flex items-center justify-center filter drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)] transform group-hover:scale-110 transition-transform duration-500">
-                                    <Sparkles className="text-blue-300 w-6 h-6 md:w-8 md:h-8 opacity-40" />
-                                </div>
+                            <div className="relative flex-grow flex items-center justify-center w-full mb-3 lg:mb-5 rounded-2xl overflow-hidden border border-blue-400/10 aspect-[16/11] sm:aspect-[4/3] shrink-0 bg-blue-950/30">
+                                <NextImage
+                                    src={combo.image}
+                                    alt={combo.name}
+                                    fill
+                                    className="object-contain transform group-hover:scale-105 transition-transform duration-700"
+                                />
                             </div>
                             <div className="mt-auto space-y-1.5 md:space-y-3 w-full">
                                 <h3 className="text-[14px] md:text-xl font-black uppercase tracking-tight leading-tight text-white line-clamp-1">{combo.name}</h3>

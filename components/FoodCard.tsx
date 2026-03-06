@@ -13,7 +13,7 @@ interface FoodCardProps {
 }
 
 export const FoodCard: React.FC<FoodCardProps> = ({ item }) => {
-    const { addToCart } = useCart();
+    const { addToCart, setSelectedItem } = useCart();
 
     return (
         <motion.div
@@ -21,7 +21,8 @@ export const FoodCard: React.FC<FoodCardProps> = ({ item }) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.4 }}
-            className="bg-white rounded-[1.25rem] md:rounded-[1.5rem] overflow-hidden border border-gray-200 group flex flex-col h-full shadow-none"
+            onClick={() => setSelectedItem?.(item)}
+            className="bg-white rounded-[1.25rem] md:rounded-[1.5rem] overflow-hidden border border-gray-200 group flex flex-col h-full shadow-none cursor-pointer hover:shadow-xl hover:border-brand-blue/20 transition-all"
             style={{ translateZ: 0, willChange: 'transform' }}
         >
             {/* Image Container */}
@@ -44,7 +45,10 @@ export const FoodCard: React.FC<FoodCardProps> = ({ item }) => {
                     <Button
                         variant="primary"
                         size="sm"
-                        onClick={() => addToCart(item)}
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            addToCart(item);
+                        }}
                     >
                         + Add
                     </Button>
@@ -71,7 +75,10 @@ export const FoodCard: React.FC<FoodCardProps> = ({ item }) => {
                         {item.category}
                     </div>
                     <button
-                        onClick={() => addToCart(item)}
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            addToCart(item);
+                        }}
                         className="w-7 h-7 md:w-8 md:h-8 bg-brand-blue text-white rounded-full flex items-center justify-center hover:bg-brand-red transition-all active:scale-95"
                     >
                         <Plus size={14} />

@@ -64,22 +64,22 @@ export default function MenuPage() {
                         </div>
 
                         {/* Categories */}
-                        <div className="flex items-center gap-2 overflow-x-auto pb-2 w-full md:w-auto scrollbar-hide">
+                        <div className="flex items-center gap-2 overflow-x-auto pb-2 w-full md:w-auto scrollbar-hide snap-x">
                             <button
                                 onClick={() => setActiveCategory('All')}
-                                className={`px-6 py-3 rounded-full font-black text-xs uppercase tracking-widest transition-all shrink-0 ${activeCategory === 'All'
-                                    ? 'bg-brand-blue text-white'
+                                className={`px-4 md:px-6 py-2 md:py-3 rounded-full font-black text-[10px] md:text-xs uppercase tracking-widest transition-all shrink-0 snap-start active:scale-95 ${activeCategory === 'All'
+                                    ? 'bg-brand-blue text-white shadow-md'
                                     : 'bg-white text-brand-blue border border-gray-100 hover:bg-gray-50'
                                     }`}
                             >
-                                All Items
+                                All
                             </button>
                             {categories.map((cat) => (
                                 <button
                                     key={cat}
                                     onClick={() => setActiveCategory(cat)}
-                                    className={`px-6 py-3 rounded-full font-black text-xs uppercase tracking-widest transition-all shrink-0 ${activeCategory === cat
-                                        ? 'bg-brand-blue text-white'
+                                    className={`px-4 md:px-6 py-2 md:py-3 rounded-full font-black text-[10px] md:text-xs uppercase tracking-widest transition-all shrink-0 snap-start active:scale-95 ${activeCategory === cat
+                                        ? 'bg-brand-blue text-white shadow-md'
                                         : 'bg-white text-brand-blue border border-gray-100 hover:bg-gray-50'
                                         }`}
                                 >

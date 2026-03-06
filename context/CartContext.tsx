@@ -17,6 +17,8 @@ interface CartContextType {
     totalPrice: number;
     isCartOpen: boolean;
     setIsCartOpen: (isOpen: boolean) => void;
+    selectedItem: MenuItem | null;
+    setSelectedItem: (item: MenuItem | null) => void;
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -73,6 +75,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     const totalPrice = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
     const [isCartOpen, setIsCartOpen] = useState(false);
+    const [selectedItem, setSelectedItem] = useState<MenuItem | null>(null);
 
     return (
         <CartContext.Provider
@@ -86,6 +89,8 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
                 totalPrice,
                 isCartOpen,
                 setIsCartOpen,
+                selectedItem,
+                setSelectedItem,
             }}
         >
             {children}

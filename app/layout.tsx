@@ -28,6 +28,8 @@ import { CartProvider } from "@/context/CartContext";
 import { MaintenanceBanner } from "@/components/MaintenanceBanner";
 import { Dock } from "@/components/Dock";
 import { CartDrawer } from "@/components/CartDrawer";
+import { ItemModal } from "@/components/ItemModal";
+import { Toaster } from "sonner";
 
 export default function RootLayout({
   children,
@@ -43,7 +45,9 @@ export default function RootLayout({
           <MaintenanceBanner />
           <Dock />
           <CartDrawer />
+          <ItemModal />
           {children}
+          <Toaster position="bottom-center" toastOptions={{ className: 'font-bold uppercase tracking-widest text-xs' }} />
         </CartProvider>
       </body>
     </html>
