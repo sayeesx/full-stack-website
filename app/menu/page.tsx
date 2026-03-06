@@ -53,13 +53,13 @@ export default function MenuPage() {
                     <div className="flex flex-col md:flex-row gap-6 items-center justify-between">
                         {/* Search */}
                         <div className="relative w-full md:max-w-md">
-                            <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" size={20} />
+                            <Search className="absolute left-5 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
                             <input
                                 type="text"
                                 placeholder="Search your favorite chicken..."
                                 value={searchQuery}
                                 onChange={(e) => setSearchQuery(e.target.value)}
-                                className="w-full pl-12 pr-6 py-4 bg-white border border-gray-100 rounded-3xl shadow-sm focus:outline-none focus:ring-2 focus:ring-brand-red/20 focus:border-brand-red transition-all font-bold text-brand-blue"
+                                className="w-full pl-12 pr-6 py-4 bg-white border border-gray-100 rounded-3xl focus:outline-none focus:ring-2 focus:ring-brand-red/10 focus:border-brand-red transition-all font-bold text-brand-blue placeholder:text-gray-300"
                             />
                         </div>
 
@@ -68,8 +68,8 @@ export default function MenuPage() {
                             <button
                                 onClick={() => setActiveCategory('All')}
                                 className={`px-6 py-3 rounded-full font-black text-xs uppercase tracking-widest transition-all shrink-0 ${activeCategory === 'All'
-                                        ? 'bg-brand-blue text-white shadow-lg'
-                                        : 'bg-white text-brand-blue border border-gray-100 hover:bg-gray-50'
+                                    ? 'bg-brand-blue text-white'
+                                    : 'bg-white text-brand-blue border border-gray-100 hover:bg-gray-50'
                                     }`}
                             >
                                 All Items
@@ -79,8 +79,8 @@ export default function MenuPage() {
                                     key={cat}
                                     onClick={() => setActiveCategory(cat)}
                                     className={`px-6 py-3 rounded-full font-black text-xs uppercase tracking-widest transition-all shrink-0 ${activeCategory === cat
-                                            ? 'bg-brand-blue text-white shadow-lg'
-                                            : 'bg-white text-brand-blue border border-gray-100 hover:bg-gray-50'
+                                        ? 'bg-brand-blue text-white'
+                                        : 'bg-white text-brand-blue border border-gray-100 hover:bg-gray-50'
                                         }`}
                                 >
                                     {cat}

@@ -22,7 +22,7 @@ export const FoodCard: React.FC<FoodCardProps> = ({ item }) => {
             viewport={{ once: true, margin: "-50px" }}
             whileHover={{ y: -10 }}
             transition={{ duration: 0.4 }}
-            className="bg-white rounded-[2rem] overflow-hidden shadow-premium hover:shadow-hover border border-gray-100 group"
+            className="bg-white rounded-[2rem] overflow-hidden border border-gray-100/80 group"
             style={{ translateZ: 0, willChange: 'transform' }}
         >
             {/* Image Container */}

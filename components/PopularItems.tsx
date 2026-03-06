@@ -20,10 +20,10 @@ export const PopularItems = () => {
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
-                            className="text-4xl md:text-6xl font-black text-brand-blue leading-tight uppercase tracking-tight"
+                            className="text-3xl md:text-6xl font-black text-brand-blue leading-tight uppercase tracking-tighter"
                         >
                             CRAVING THE <br />
-                            <span className="text-brand-red">BEST CRUNCH?</span>
+                            <span className="text-brand-red italic">BEST CRUNCH?</span>
                         </motion.h2>
                         <motion.p
                             initial={{ opacity: 0, x: -20 }}

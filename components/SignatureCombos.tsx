@@ -55,8 +55,8 @@ export const SignatureCombos = () => {
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true, margin: "-50px" }}
                             transition={{ delay: index * 0.1 }}
-                            whileHover={{ y: -20 }}
-                            className="bg-blue-900/40 backdrop-blur-md rounded-[2.5rem] md:rounded-[3rem] border border-blue-700/50 overflow-hidden flex flex-col items-center p-6 md:p-8 text-center group"
+                            whileHover={{ y: -10 }}
+                            className="bg-blue-900/20 backdrop-blur-md rounded-[2.5rem] md:rounded-[3rem] border border-blue-400/20 overflow-hidden flex flex-col items-center p-6 md:p-8 text-center group"
                             style={{ willChange: 'transform, opacity' }}
                         >
                             <div className="relative mb-6 md:mb-8 w-full aspect-square flex items-center justify-center">

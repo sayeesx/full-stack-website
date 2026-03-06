@@ -81,27 +81,27 @@ export const Hero = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.8, delay: 0.5 }}
-                        className="pt-8 md:pt-12 flex flex-wrap items-center justify-center gap-8 md:gap-12 border-t border-gray-100"
+                        className="pt-8 md:pt-12 flex flex-wrap items-center justify-center gap-6 md:gap-12 border-t border-gray-100"
                     >
-                        <div className="text-center">
+                        <div className="text-center min-w-[80px]">
                             <p className="text-2xl md:text-4xl font-black text-brand-blue leading-none">
                                 <CountUp to={4.9} duration={2} />/5
                             </p>
-                            <p className="text-[10px] md:text-xs font-bold text-gray-400 uppercase tracking-widest mt-2">Rating</p>
+                            <p className="text-[10px] md:text-xs font-bold text-gray-400 uppercase tracking-widest mt-2 px-2">Rating</p>
                         </div>
                         <div className="hidden md:block w-px h-10 bg-gray-200" />
-                        <div className="text-center">
+                        <div className="text-center min-w-[80px]">
                             <p className="text-2xl md:text-4xl font-black text-brand-blue leading-none">
                                 <CountUp to={15} duration={2} />k+
                             </p>
-                            <p className="text-[10px] md:text-xs font-bold text-gray-400 uppercase tracking-widest mt-2">Happy Orders</p>
+                            <p className="text-[10px] md:text-xs font-bold text-gray-400 uppercase tracking-widest mt-2 px-2">Happy Orders</p>
                         </div>
                         <div className="hidden md:block w-px h-10 bg-gray-200" />
-                        <div className="text-center">
+                        <div className="text-center min-w-[80px]">
                             <p className="text-2xl md:text-4xl font-black text-brand-blue leading-none">
                                 <CountUp to={20} duration={2} />m
                             </p>
-                            <p className="text-[10px] md:text-xs font-bold text-gray-400 uppercase tracking-widest mt-2">Delivery Time</p>
+                            <p className="text-[10px] md:text-xs font-bold text-gray-400 uppercase tracking-widest mt-2 px-2">Delivery Time</p>
                         </div>
                     </motion.div>
                 </div>
