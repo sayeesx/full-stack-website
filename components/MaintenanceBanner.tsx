@@ -50,13 +50,13 @@ export const MaintenanceBanner = () => {
                             duration: 15,
                             ease: 'linear'
                         }}
-                        className="flex whitespace-nowrap w-[200%]"
+                        className="flex whitespace-nowrap w-max"
                     >
-                        <p className="w-1/2 text-[8px] font-black uppercase tracking-[0.1em] leading-tight text-center px-4">
+                        <p className="text-[8px] font-black uppercase tracking-[0.1em] leading-tight px-4 flex-shrink-0 flex items-center">
                             our store is currently under maintanence, bookings open once everythings ready, thanks for your patience
                             <span className="mx-4 text-white/50">•</span>
                         </p>
-                        <p className="w-1/2 text-[8px] font-black uppercase tracking-[0.1em] leading-tight text-center px-4">
+                        <p className="text-[8px] font-black uppercase tracking-[0.1em] leading-tight px-4 flex-shrink-0 flex items-center">
                             our store is currently under maintanence, bookings open once everythings ready, thanks for your patience
                             <span className="mx-4 text-white/50">•</span>
                         </p>
