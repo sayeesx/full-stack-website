@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import Link from 'next/link';
-import { Facebook, Instagram, Twitter, Phone, Mail, MapPin } from 'lucide-react';
+import { Facebook, Instagram, Twitter, Phone, Mail, MapPin, MessageCircle } from 'lucide-react';
 
 export const Footer = () => {
     const [isMounted, setIsMounted] = React.useState(false);
@@ -77,21 +77,41 @@ export const Footer = () => {
 
                     {/* Contact Info */}
                     <div>
-                        <h4 className="font-black text-sm md:text-lg mb-4 md:mb-6 uppercase tracking-wider">Contact Us</h4>
-                        <ul className="space-y-2 md:space-y-4">
+                        <h4 className="font-black text-sm md:text-lg mb-4 md:mb-6 uppercase tracking-wider hidden md:block">Contact Us</h4>
+
+                        {/* Desktop Contact List */}
+                        <ul className="hidden md:flex flex-col space-y-4">
                             <li className="flex items-start gap-3">
                                 <MapPin className="text-brand-red shrink-0" size={16} />
-                                <span className="text-blue-100/80 text-xs md:text-sm">123 Fryer St, Crunch Valley, CV</span>
+                                <span className="text-blue-100/80 text-sm">123 Fryer St, Crunch Valley, CV</span>
                             </li>
                             <li className="flex items-center gap-3">
                                 <Phone className="text-brand-red shrink-0" size={16} />
-                                <span className="text-blue-100/80 text-xs md:text-sm">+1 (555) 123-FRY</span>
+                                <span className="text-blue-100/80 text-sm">+1 (555) 123-FRY</span>
                             </li>
                             <li className="flex items-center gap-3">
                                 <Mail className="text-brand-red shrink-0" size={16} />
-                                <span className="text-blue-100/80 text-xs md:text-sm">hello@chickrepublic.com</span>
+                                <span className="text-blue-100/80 text-sm">hello@chickrepublic.com</span>
                             </li>
                         </ul>
+
+                        {/* Mobile Contact Row */}
+                        <div className="flex md:hidden justify-between items-center bg-blue-900/40 p-4 rounded-2xl border border-blue-800">
+                            <a href="#" className="flex flex-col items-center text-blue-100/80 hover:text-white transition-colors">
+                                <Phone className="text-brand-red mb-1.5" size={20} />
+                                <span className="text-[10px] font-bold uppercase tracking-wider">Phone</span>
+                            </a>
+                            <div className="w-px h-8 bg-blue-800"></div>
+                            <a href="#" className="flex flex-col items-center text-blue-100/80 hover:text-white transition-colors">
+                                <MessageCircle className="text-brand-red mb-1.5" size={20} />
+                                <span className="text-[10px] font-bold uppercase tracking-wider">WhatsApp</span>
+                            </a>
+                            <div className="w-px h-8 bg-blue-800"></div>
+                            <a href="#" className="flex flex-col items-center text-blue-100/80 hover:text-white transition-colors">
+                                <MapPin className="text-brand-red mb-1.5" size={20} />
+                                <span className="text-[10px] font-bold uppercase tracking-wider">Location</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
 

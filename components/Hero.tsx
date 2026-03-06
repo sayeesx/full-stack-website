@@ -50,26 +50,26 @@ export const Hero = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.2 }}
-                            className="text-gray-500 text-base md:text-2xl max-w-2xl mx-auto leading-relaxed font-bold uppercase tracking-tight px-4"
+                            className="text-gray-500 text-xs md:text-lg max-w-sm md:max-w-2xl mx-auto leading-relaxed font-bold uppercase tracking-tight px-4"
                         >
-                            Experience the crunch that's taking over the city. Our signature broasted chicken is marinated for 24 hours and fried to golden perfection.
+                            Experience the crunch that's taking over the city.<br /> Our signature broasted chicken is marinated for 24 hours and fried to golden perfection.
                         </motion.p>
 
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.3 }}
-                            className="flex flex-row items-center justify-center gap-2 md:gap-6 px-2 md:px-4"
+                            className="flex flex-row items-center justify-center gap-3 md:gap-4 px-2 md:px-4"
                         >
                             <Link href="/menu" className="flex-1 sm:flex-none">
-                                <Button variant="primary" size="lg" className="group text-sm md:text-xl px-4 md:px-12 py-4 md:py-6 w-full">
+                                <Button variant="primary" size="md" className="group w-full sm:w-auto whitespace-nowrap">
                                     Order Now
-                                    <ArrowRight className="ml-1 md:ml-2 group-hover:translate-x-1 transition-transform" size={16} />
+                                    <ArrowRight className="ml-1 md:ml-2 group-hover:translate-x-1 transition-transform" size={14} />
                                 </Button>
                             </Link>
                             <Link href="/menu" className="flex-1 sm:flex-none">
-                                <Button variant="outline" size="lg" className="group text-sm md:text-xl px-4 md:px-12 py-4 md:py-6 w-full text-brand-blue">
-                                    <Play className="mr-1 md:mr-2 fill-brand-red" size={16} />
+                                <Button variant="outline" size="md" className="group w-full sm:w-auto text-brand-blue whitespace-nowrap">
+                                    <Play className="mr-1 md:mr-2 fill-brand-red" size={14} />
                                     Menu
                                 </Button>
                             </Link>

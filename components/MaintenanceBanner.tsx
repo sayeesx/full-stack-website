@@ -25,18 +25,35 @@ export const MaintenanceBanner = () => {
 
     return (
         <motion.div
-            initial={{ y: -32, opacity: 0 }}
+            initial={{ y: 0, opacity: 1 }}
             animate={{
                 y: isVisible ? 0 : -32,
                 opacity: isVisible ? 1 : 0
             }}
             transition={{ type: 'spring', damping: 20, stiffness: 120 }}
-            className="fixed top-0 left-0 right-0 z-[200] w-full bg-brand-red text-white flex items-center justify-center overflow-hidden h-[32px] shadow-sm"
+            className="fixed top-0 left-0 right-0 z-[200] w-full bg-brand-red text-white flex items-center overflow-hidden h-[32px] shadow-sm"
         >
-            <div className="w-full px-4 overflow-hidden">
-                <p className="text-[8px] md:text-[10px] font-black uppercase tracking-[0.1em] text-center leading-none whitespace-nowrap">
-                    our store is currently under maintanence, bookings open once everythings ready, thanks for your patience
-                </p>
+            <div className="flex w-full overflow-hidden">
+                {/* Desktop View: Centered Text */}
+                <div className="hidden md:flex w-full items-center justify-center px-4">
+                    <p className="text-[10px] font-black uppercase tracking-[0.1em] leading-none whitespace-nowrap">
+                        our store is currently under maintanence, bookings open once everythings ready, thanks for your patience
+                    </p>
+                </div>
+
+                {/* Mobile View: Fade-In Text */}
+                <div className="flex md:hidden w-full items-center justify-center px-2">
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.8, ease: "easeInOut" }}
+                        className="w-full"
+                    >
+                        <p className="text-[8px] font-black uppercase tracking-[0.1em] leading-tight text-center truncate">
+                            our store is currently under maintanence, bookings open once everythings ready, thanks for your patience
+                        </p>
+                    </motion.div>
+                </div>
             </div>
 
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent pointer-events-none" />

@@ -47,38 +47,34 @@ export const SignatureCombos = () => {
                     </motion.p>
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12">
-                    {combos.map((combo, index) => (
+                <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
+                    {combos.slice(0, 3).map((combo, index) => (
                         <motion.div
                             key={combo.id}
                             initial={{ opacity: 0, scale: 0.9 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true, margin: "-50px" }}
                             transition={{ delay: index * 0.1 }}
-                            whileHover={{ y: -10 }}
-                            className="bg-blue-900/20 backdrop-blur-md rounded-[2.5rem] md:rounded-[3rem] border border-blue-400/20 overflow-hidden flex flex-col items-center p-6 md:p-8 text-center group"
+                            whileHover={{ y: -5 }}
+                            className={`bg-blue-900/40 backdrop-blur-md rounded-2xl md:rounded-[2rem] border border-blue-400/30 overflow-hidden flex-col items-center justify-between p-4 md:p-6 text-center group aspect-square ${index >= 2 ? 'hidden lg:flex' : 'flex'}`}
                             style={{ willChange: 'transform, opacity' }}
                         >
-                            <div className="relative mb-6 md:mb-8 w-full aspect-square flex items-center justify-center">
-                                <div className="absolute inset-0 bg-brand-red/20 blur-[40px] md:blur-[60px] rounded-full transform scale-75 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                                <NextImage
-                                    src={combo.image}
-                                    alt={combo.name}
-                                    width={300}
-                                    height={300}
-                                    className="w-4/5 md:w-full h-full object-contain filter drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)] transform group-hover:scale-110 transition-transform duration-500"
-                                />
+                            <div className="relative flex-grow flex items-center justify-center w-full mb-2 lg:mb-4 bg-blue-950/40 rounded-xl border border-blue-400/10">
+                                <div className="absolute inset-0 bg-brand-red/10 blur-[30px] rounded-full transform scale-75 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                <div className="w-12 h-12 md:w-16 md:h-16 bg-blue-800/20 rounded-full flex items-center justify-center filter drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)] transform group-hover:scale-110 transition-transform duration-500">
+                                    <Sparkles className="text-blue-300 w-6 h-6 md:w-8 md:h-8 opacity-40" />
+                                </div>
                             </div>
-                            <div className="mt-auto space-y-3 md:space-y-4">
-                                <h3 className="text-xl md:text-2xl font-black uppercase tracking-tight leading-tight text-white">{combo.name}</h3>
-                                <p className="text-blue-100/70 text-xs md:text-sm font-medium leading-relaxed italic line-clamp-2 md:line-clamp-none">
+                            <div className="mt-auto space-y-1.5 md:space-y-3 w-full">
+                                <h3 className="text-[14px] md:text-xl font-black uppercase tracking-tight leading-tight text-white line-clamp-1">{combo.name}</h3>
+                                <p className="text-blue-100/60 text-[10px] md:text-sm font-medium leading-tight italic line-clamp-2">
                                     {combo.description}
                                 </p>
-                                <div className="pt-2 md:pt-4 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8">
-                                    <span className="text-2xl md:text-3xl font-black text-brand-red">
+                                <div className="pt-2 md:pt-4 flex flex-col items-center justify-center gap-2 md:gap-4">
+                                    <span className="text-lg md:text-2xl font-black text-brand-red">
                                         ${combo.price.toFixed(2)}
                                     </span>
-                                    <Button variant="primary" size="md" className="w-full md:w-auto" onClick={() => addToCart(combo)}>
+                                    <Button variant="primary" size="sm" className="w-full text-[10px] md:text-sm h-8 md:h-10 py-0" onClick={() => addToCart(combo)}>
                                         Order Now
                                     </Button>
                                 </div>
