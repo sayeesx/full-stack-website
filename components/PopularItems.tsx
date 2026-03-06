@@ -6,6 +6,7 @@ import { menuItems } from '@/lib/data/menu';
 import { FoodCard } from './FoodCard';
 import { Button } from './ui/Button';
 import { ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 export const PopularItems = () => {
     const popularItems = menuItems.filter(item => item.isPopular);
@@ -40,11 +41,14 @@ export const PopularItems = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true, margin: "-50px" }}
                         transition={{ delay: 0.2 }}
+                        className="w-full md:w-auto"
                     >
-                        <Button variant="outline" className="group">
-                            View Full Menu
-                            <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
-                        </Button>
+                        <Link href="/menu">
+                            <Button variant="outline" className="group w-full md:w-auto py-6 md:py-4 px-8 text-lg md:text-base">
+                                View Full Menu
+                                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
+                            </Button>
+                        </Link>
                     </motion.div>
                 </div>
 

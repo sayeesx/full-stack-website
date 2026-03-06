@@ -4,6 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from './ui/Button';
 import { ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 export const CTABanner = () => {
     return (
@@ -19,22 +20,24 @@ export const CTABanner = () => {
                     <div className="absolute top-0 right-0 w-64 h-64 bg-white opacity-10 rounded-full translate-x-1/2 -translate-y-1/2" />
                     <div className="absolute bottom-0 left-0 w-48 h-48 bg-brand-blue opacity-20 rounded-full -translate-x-1/2 translate-y-1/2" />
 
-                    <div className="relative z-10 space-y-8">
-                        <h2 className="text-5xl md:text-8xl font-black uppercase tracking-tighter leading-[0.9]">
+                    <div className="relative z-10 space-y-6 md:space-y-8">
+                        <h2 className="text-4xl md:text-8xl font-black uppercase tracking-tighter leading-[0.9]">
                             CRAVING <br />
-                            <span className="italic">CRUNCH?</span>
+                            <span className="italic text-white/90">CRUNCH?</span>
                         </h2>
-                        <p className="text-xl md:text-2xl font-bold uppercase tracking-[0.2em] text-red-100">
+                        <p className="text-lg md:text-2xl font-bold uppercase tracking-[0.15em] md:tracking-[0.2em] text-red-100 max-w-md mx-auto">
                             Your Chicken. Your Way. Right Now.
                         </p>
-                        <div className="pt-4">
-                            <Button
-                                variant="secondary"
-                                size="lg"
-                                className="bg-brand-blue hover:bg-white hover:text-brand-blue transform hover:scale-110"
-                            >
-                                Order Now <ArrowRight className="ml-2" size={24} />
-                            </Button>
+                        <div className="pt-4 flex justify-center">
+                            <Link href="/menu" className="w-full sm:w-auto px-4">
+                                <Button
+                                    variant="secondary"
+                                    size="lg"
+                                    className="bg-brand-blue hover:bg-white text-white hover:text-brand-blue transform hover:scale-105 md:hover:scale-110 w-full transition-all py-6 text-xl"
+                                >
+                                    Order Now <ArrowRight className="ml-2" size={24} />
+                                </Button>
+                            </Link>
                         </div>
                     </div>
                 </motion.div>

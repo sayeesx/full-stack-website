@@ -19,21 +19,21 @@ export const SignatureCombos = () => {
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-red-600 opacity-5 blur-[100px] rounded-full -ml-48 -mb-48" />
 
             <div className="container mx-auto px-4 md:px-6 relative z-10">
-                <div className="text-center mb-20 space-y-4">
+                <div className="text-center mb-12 md:mb-20 space-y-4">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="flex items-center justify-center gap-2 text-brand-red font-black uppercase tracking-[0.4em] text-xs"
+                        className="flex items-center justify-center gap-2 text-brand-red font-black uppercase tracking-[0.2em] md:tracking-[0.4em] text-[10px] md:text-xs"
                     >
-                        <Sparkles size={16} />
+                        <Sparkles size={14} />
                         Exclusive Deals
                     </motion.div>
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-4xl md:text-6xl font-black uppercase tracking-tight"
+                        className="text-3xl md:text-6xl font-black uppercase tracking-tight"
                     >
                         SIGNATURE <span className="text-brand-red italic">COMBOS</span>
                     </motion.h2>
@@ -41,7 +41,7 @@ export const SignatureCombos = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-blue-100/60 font-bold uppercase tracking-widest text-sm"
+                        className="text-blue-100/60 font-bold uppercase tracking-widest text-[10px] md:text-sm px-4"
                     >
                         Bigger crunch, better value. Perfect for sharing (or not).
                     </motion.p>
@@ -56,31 +56,31 @@ export const SignatureCombos = () => {
                             viewport={{ once: true, margin: "-50px" }}
                             transition={{ delay: index * 0.1 }}
                             whileHover={{ y: -20 }}
-                            className="bg-blue-900/40 backdrop-blur-md rounded-[3rem] border border-blue-700/50 overflow-hidden flex flex-col items-center p-8 text-center group"
+                            className="bg-blue-900/40 backdrop-blur-md rounded-[2.5rem] md:rounded-[3rem] border border-blue-700/50 overflow-hidden flex flex-col items-center p-6 md:p-8 text-center group"
                             style={{ willChange: 'transform, opacity' }}
                         >
-                            <div className="relative mb-8 w-full aspect-square flex items-center justify-center">
-                                <div className="absolute inset-0 bg-brand-red/20 blur-[60px] rounded-full transform scale-75 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                            <div className="relative mb-6 md:mb-8 w-full aspect-square flex items-center justify-center">
+                                <div className="absolute inset-0 bg-brand-red/20 blur-[40px] md:blur-[60px] rounded-full transform scale-75 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                                 <NextImage
                                     src={combo.image}
                                     alt={combo.name}
-                                    width={400}
-                                    height={400}
-                                    className="w-full h-full object-contain filter drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)] transform group-hover:scale-110 transition-transform duration-500"
+                                    width={300}
+                                    height={300}
+                                    className="w-4/5 md:w-full h-full object-contain filter drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)] transform group-hover:scale-110 transition-transform duration-500"
                                 />
                             </div>
 
-                            <div className="mt-auto space-y-4">
-                                <h3 className="text-2xl font-black uppercase tracking-tight">{combo.name}</h3>
-                                <p className="text-blue-100/70 text-sm font-medium leading-relaxed italic">
+                            <div className="mt-auto space-y-3 md:space-y-4">
+                                <h3 className="text-xl md:text-2xl font-black uppercase tracking-tight leading-tight">{combo.name}</h3>
+                                <p className="text-blue-100/70 text-xs md:text-sm font-medium leading-relaxed italic line-clamp-2 md:line-clamp-none">
                                     {combo.description}
                                 </p>
-                                <div className="pt-4 flex flex-col items-center gap-6">
-                                    <span className="text-4xl font-black text-brand-red">
+                                <div className="pt-2 md:pt-4 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8">
+                                    <span className="text-3xl md:text-4xl font-black text-brand-red">
                                         ${combo.price.toFixed(2)}
                                     </span>
-                                    <Button variant="primary" size="md" className="w-full" onClick={() => addToCart(combo)}>
-                                        Add To Order
+                                    <Button variant="primary" size="lg" className="w-full md:w-auto px-10 py-4 text-lg" onClick={() => addToCart(combo)}>
+                                        Order Now
                                     </Button>
                                 </div>
                             </div>

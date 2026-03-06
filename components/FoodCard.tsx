@@ -55,12 +55,12 @@ export const FoodCard: React.FC<FoodCardProps> = ({ item }) => {
             </div>
 
             {/* Content */}
-            <div className="p-6 space-y-4">
-                <div className="flex justify-between items-start gap-4">
-                    <h3 className="font-black text-xl text-brand-blue leading-tight uppercase tracking-tight">
+            <div className="p-4 md:p-6 space-y-3 md:space-y-4">
+                <div className="flex justify-between items-start gap-2 md:gap-4">
+                    <h3 className="font-black text-lg md:text-xl text-brand-blue leading-tight uppercase tracking-tight">
                         {item.name}
                     </h3>
-                    <span className="font-black text-xl text-brand-red italic">
+                    <span className="font-black text-lg md:text-xl text-brand-red italic shrink-0">
                         ${item.price.toFixed(2)}
                     </span>
                 </div>

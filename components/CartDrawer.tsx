@@ -6,17 +6,14 @@ import { X, ShoppingBag, Plus, Minus, Trash2, ArrowRight } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
 import { Button } from './ui/Button';
 
-interface CartDrawerProps {
-    isOpen: boolean;
-    onClose: () => void;
-}
 
-export const CartDrawer: React.FC<CartDrawerProps> = ({ isOpen, onClose }) => {
-    const { cart, updateQuantity, removeFromCart, totalPrice, totalItems } = useCart();
+export const CartDrawer: React.FC = () => {
+    const { cart, updateQuantity, removeFromCart, totalPrice, totalItems, isCartOpen, setIsCartOpen } = useCart();
+    const onClose = () => setIsCartOpen(false);
 
     return (
         <AnimatePresence>
-            {isOpen && (
+            {isCartOpen && (
                 <>
                     {/* Backdrop */}
                     <motion.div
