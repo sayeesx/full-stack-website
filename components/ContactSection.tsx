@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Phone, MessageCircle, MapPin, Send } from 'lucide-react';
+import { Phone, MapPin, Send } from 'lucide-react';
 import { Button } from './ui/Button';
 
 export const ContactSection = () => {
@@ -22,7 +22,7 @@ export const ContactSection = () => {
                         </div>
 
                         {/* Desktop Contact Links */}
-                        <div className="hidden md:grid grid-cols-2 lg:grid-cols-3 gap-6 pb-4 md:pb-0">
+                        <div className="hidden md:grid grid-cols-2 lg:grid-cols-2 gap-6 pb-4 md:pb-0">
                             <div className="flex items-center gap-4 group justify-start p-4 md:p-0 rounded-2xl md:bg-transparent">
                                 <div className="w-10 h-10 md:w-12 md:h-12 bg-red-50 text-brand-red rounded-xl flex items-center justify-center shrink-0 group-hover:bg-brand-red group-hover:text-white transition-colors duration-300">
                                     <Phone size={20} className="md:w-6 md:h-6" />
@@ -30,16 +30,6 @@ export const ContactSection = () => {
                                 <div>
                                     <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Call Us</p>
                                     <p className="text-brand-blue font-black text-sm md:text-lg">+1 (555) 123-FRY</p>
-                                </div>
-                            </div>
-
-                            <div className="flex items-center gap-4 group justify-start p-4 md:p-0 rounded-2xl md:bg-transparent">
-                                <div className="w-10 h-10 md:w-12 md:h-12 bg-blue-50 text-brand-blue rounded-xl flex items-center justify-center shrink-0 group-hover:bg-brand-blue group-hover:text-white transition-colors duration-300">
-                                    <MessageCircle size={20} className="md:w-6 md:h-6" />
-                                </div>
-                                <div>
-                                    <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest">WhatsApp</p>
-                                    <p className="text-brand-blue font-black text-sm md:text-lg">+1 (555) 999-CRUNCH</p>
                                 </div>
                             </div>
 
@@ -60,12 +50,6 @@ export const ContactSection = () => {
                                 <Phone className="text-brand-red mb-1.5" size={18} />
                                 <span className="text-[9px] font-black uppercase tracking-wider text-brand-blue leading-none">Call Us</span>
                                 <span className="text-[8px] font-bold text-gray-400 mt-1 leading-none tracking-tight">+1 555-123-FRY</span>
-                            </a>
-                            <div className="w-px h-8 bg-gray-200"></div>
-                            <a href="https://wa.me/1555999CRUNCH" className="flex flex-col items-center flex-1 text-center group">
-                                <MessageCircle className="text-brand-blue mb-1.5" size={18} />
-                                <span className="text-[9px] font-black uppercase tracking-wider text-brand-blue leading-none">WhatsApp</span>
-                                <span className="text-[8px] font-bold text-gray-400 mt-1 leading-none tracking-tight">+1 555-999-CRUNCH</span>
                             </a>
                             <div className="w-px h-8 bg-gray-200"></div>
                             <a href="#" className="flex flex-col items-center flex-1 text-center group">
@@ -93,7 +77,7 @@ export const ContactSection = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="bg-section-bg p-5 md:p-8 rounded-[2rem] md:rounded-[2.5rem] border border-gray-100"
+                        className="bg-section-bg p-5 md:p-8 rounded-[2rem] md:rounded-[2.5rem] border border-gray-100 mt-8 lg:mt-20"
                     >
                         <form className="space-y-4 md:space-y-5">
                             <div className="space-y-4 md:space-y-5">
