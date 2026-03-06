@@ -1,0 +1,93 @@
+'use client';
+
+import React from 'react';
+import { motion } from 'framer-motion';
+import NextImage from 'next/image';
+import { menuItems } from '@/lib/data/menu';
+import { Button } from './ui/Button';
+import { useCart } from '@/context/CartContext';
+import { Sparkles, ArrowRight } from 'lucide-react';
+
+export const SignatureCombos = () => {
+    const { addToCart } = useCart();
+    const combos = menuItems.filter(item => item.category === 'Combos');
+
+    return (
+        <section className="py-24 bg-brand-blue text-white overflow-hidden relative">
+            {/* Abstract Background Shapes */}
+            <div className="absolute top-0 right-0 w-96 h-96 bg-brand-red opacity-10 blur-[100px] rounded-full -mr-48 -mt-48" />
+            <div className="absolute bottom-0 left-0 w-96 h-96 bg-red-600 opacity-5 blur-[100px] rounded-full -ml-48 -mb-48" />
+
+            <div className="container mx-auto px-4 md:px-6 relative z-10">
+                <div className="text-center mb-20 space-y-4">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="flex items-center justify-center gap-2 text-brand-red font-black uppercase tracking-[0.4em] text-xs"
+                    >
+                        <Sparkles size={16} />
+                        Exclusive Deals
+                    </motion.div>
+                    <motion.h2
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="text-4xl md:text-6xl font-black uppercase tracking-tight"
+                    >
+                        SIGNATURE <span className="text-brand-red italic">COMBOS</span>
+                    </motion.h2>
+                    <motion.p
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="text-blue-100/60 font-bold uppercase tracking-widest text-sm"
+                    >
+                        Bigger crunch, better value. Perfect for sharing (or not).
+                    </motion.p>
+                </div>
+
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12">
+                    {combos.map((combo, index) => (
+                        <motion.div
+                            key={combo.id}
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true, margin: "-50px" }}
+                            transition={{ delay: index * 0.1 }}
+                            whileHover={{ y: -20 }}
+                            className="bg-blue-900/40 backdrop-blur-md rounded-[3rem] border border-blue-700/50 overflow-hidden flex flex-col items-center p-8 text-center group"
+                            style={{ willChange: 'transform, opacity' }}
+                        >
+                            <div className="relative mb-8 w-full aspect-square flex items-center justify-center">
+                                <div className="absolute inset-0 bg-brand-red/20 blur-[60px] rounded-full transform scale-75 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                <NextImage
+                                    src={combo.image}
+                                    alt={combo.name}
+                                    width={400}
+                                    height={400}
+                                    className="w-full h-full object-contain filter drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)] transform group-hover:scale-110 transition-transform duration-500"
+                                />
+                            </div>
+
+                            <div className="mt-auto space-y-4">
+                                <h3 className="text-2xl font-black uppercase tracking-tight">{combo.name}</h3>
+                                <p className="text-blue-100/70 text-sm font-medium leading-relaxed italic">
+                                    {combo.description}
+                                </p>
+                                <div className="pt-4 flex flex-col items-center gap-6">
+                                    <span className="text-4xl font-black text-brand-red">
+                                        ${combo.price.toFixed(2)}
+                                    </span>
+                                    <Button variant="primary" size="md" className="w-full" onClick={() => addToCart(combo)}>
+                                        Add To Order
+                                    </Button>
+                                </div>
+                            </div>
+                        </motion.div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
+};
