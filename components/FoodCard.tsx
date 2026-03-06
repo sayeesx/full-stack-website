@@ -17,16 +17,15 @@ export const FoodCard: React.FC<FoodCardProps> = ({ item }) => {
 
     return (
         <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
-            whileHover={{ y: -10 }}
             transition={{ duration: 0.4 }}
-            className="bg-white rounded-[2rem] overflow-hidden border border-gray-100/80 group"
+            className="bg-white rounded-[1.25rem] md:rounded-[1.5rem] overflow-hidden border border-gray-200 group flex flex-col h-full shadow-none"
             style={{ translateZ: 0, willChange: 'transform' }}
         >
             {/* Image Container */}
-            <div className="relative h-52 md:h-64 overflow-hidden bg-gray-50">
+            <div className="relative h-40 md:h-48 overflow-hidden bg-gray-50 shrink-0">
                 <NextImage
                     src={item.image}
                     alt={item.name}
@@ -35,48 +34,47 @@ export const FoodCard: React.FC<FoodCardProps> = ({ item }) => {
                     className="object-cover transition-transform duration-600 group-hover:scale-110"
                 />
                 {item.isPopular && (
-                    <div className="absolute top-3 left-3 bg-brand-red text-white text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] px-2.5 py-1 rounded-full">
+                    <div className="absolute top-2 left-2 bg-brand-red text-white text-[8px] md:text-[9px] font-black uppercase tracking-[0.15em] px-2 py-0.5 rounded-full">
                         Popular
                     </div>
                 )}
 
                 {/* Quick Add Overlay (Desktop) */}
-                <div className="hidden md:flex absolute inset-0 bg-brand-blue/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 items-center justify-center">
+                <div className="hidden md:flex absolute inset-0 bg-brand-blue/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 items-center justify-center">
                     <Button
                         variant="primary"
                         size="sm"
                         onClick={() => addToCart(item)}
                     >
-                        <Plus className="mr-1" size={18} />
-                        Add to Cart
+                        + Add
                     </Button>
                 </div>
             </div>
 
             {/* Content */}
-            <div className="p-3.5 md:p-6 space-y-2 md:space-y-4">
-                <div className="flex justify-between items-start gap-2">
-                    <h3 className="font-black text-base md:text-xl text-brand-blue leading-tight uppercase tracking-tight line-clamp-1">
+            <div className="p-3 md:p-4 space-y-1.5 md:space-y-3 flex flex-col flex-grow">
+                <div className="flex justify-between items-start gap-1">
+                    <h3 className="font-black text-sm md:text-base text-brand-blue leading-tight uppercase tracking-tight line-clamp-1">
                         {item.name}
                     </h3>
-                    <span className="font-black text-base md:text-xl text-brand-red italic shrink-0">
+                    <span className="font-black text-sm md:text-base text-brand-red italic shrink-0">
                         ${item.price.toFixed(2)}
                     </span>
                 </div>
 
-                <p className="text-gray-500 text-xs md:text-sm font-medium leading-relaxed line-clamp-2">
+                <p className="text-gray-500 text-[10px] md:text-xs font-medium leading-tight line-clamp-2 md:line-clamp-3">
                     {item.description}
                 </p>
 
-                <div className="pt-1 md:pt-2 flex items-center justify-between">
-                    <div className="text-[9px] md:text-[10px] font-black text-gray-400 uppercase tracking-widest bg-gray-100 px-2.5 py-1 rounded-full">
+                <div className="pt-auto mt-auto flex items-center justify-between">
+                    <div className="text-[8px] md:text-[9px] font-black text-gray-400 uppercase tracking-widest bg-gray-50 px-2 py-0.5 rounded-full">
                         {item.category}
                     </div>
                     <button
                         onClick={() => addToCart(item)}
-                        className="w-9 h-9 md:w-10 md:h-10 bg-brand-blue text-white rounded-full flex items-center justify-center hover:bg-brand-red transition-all active:scale-95"
+                        className="w-7 h-7 md:w-8 md:h-8 bg-brand-blue text-white rounded-full flex items-center justify-center hover:bg-brand-red transition-all active:scale-95"
                     >
-                        <Plus size={18} />
+                        <Plus size={14} />
                     </button>
                 </div>
             </div>

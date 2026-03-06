@@ -25,16 +25,16 @@ export const MaintenanceBanner = () => {
 
     return (
         <motion.div
-            initial={{ y: -100, opacity: 0 }}
+            initial={{ y: -32, opacity: 0 }}
             animate={{
-                y: isVisible ? 0 : -100,
+                y: isVisible ? 0 : -32,
                 opacity: isVisible ? 1 : 0
             }}
-            transition={{ duration: 0.5, ease: 'easeOut' }}
-            className="fixed top-0 left-0 right-0 z-[200] w-full bg-brand-red text-white flex items-center justify-center overflow-hidden h-[32px] shadow-lg"
+            transition={{ type: 'spring', damping: 20, stiffness: 120 }}
+            className="fixed top-0 left-0 right-0 z-[200] w-full bg-brand-red text-white flex items-center justify-center overflow-hidden h-[32px] shadow-sm"
         >
-            <div className="container mx-auto px-4 flex items-center justify-center">
-                <p className="text-[8px] md:text-[10px] font-black uppercase tracking-[0.12em] text-center leading-none">
+            <div className="w-full px-4 overflow-hidden">
+                <p className="text-[8px] md:text-[10px] font-black uppercase tracking-[0.1em] text-center leading-none whitespace-nowrap">
                     our store is currently under maintanence, bookings open once everythings ready, thanks for your patience
                 </p>
             </div>

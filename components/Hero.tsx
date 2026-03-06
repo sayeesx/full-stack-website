@@ -41,7 +41,7 @@ export const Hero = () => {
                                 CHICK <br />
                                 <span className="text-brand-red">REPUBLIC</span>
                             </h1>
-                            <p className="text-lg md:text-3xl font-black text-brand-blue/80 italic tracking-[0.15em] md:tracking-[0.2em] uppercase">
+                            <p className="text-sm md:text-xl font-black text-brand-blue/80 italic tracking-[0.1em] md:tracking-[0.15em] uppercase">
                                 "FRY HARDER."
                             </p>
                         </motion.div>
