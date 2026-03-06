@@ -69,17 +69,16 @@ export const SignatureCombos = () => {
                                     className="w-4/5 md:w-full h-full object-contain filter drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)] transform group-hover:scale-110 transition-transform duration-500"
                                 />
                             </div>
-
                             <div className="mt-auto space-y-3 md:space-y-4">
-                                <h3 className="text-xl md:text-2xl font-black uppercase tracking-tight leading-tight">{combo.name}</h3>
+                                <h3 className="text-xl md:text-2xl font-black uppercase tracking-tight leading-tight text-white">{combo.name}</h3>
                                 <p className="text-blue-100/70 text-xs md:text-sm font-medium leading-relaxed italic line-clamp-2 md:line-clamp-none">
                                     {combo.description}
                                 </p>
                                 <div className="pt-2 md:pt-4 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8">
-                                    <span className="text-3xl md:text-4xl font-black text-brand-red">
+                                    <span className="text-2xl md:text-3xl font-black text-brand-red">
                                         ${combo.price.toFixed(2)}
                                     </span>
-                                    <Button variant="primary" size="lg" className="w-full md:w-auto px-10 py-4 text-lg" onClick={() => addToCart(combo)}>
+                                    <Button variant="primary" size="md" className="w-full md:w-auto" onClick={() => addToCart(combo)}>
                                         Order Now
                                     </Button>
                                 </div>

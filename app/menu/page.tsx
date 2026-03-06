@@ -18,7 +18,7 @@ export default function MenuPage() {
     });
 
     return (
-        <div className="min-h-screen bg-gray-50 pt-32 pb-20">
+        <div className="min-h-screen bg-gray-50 pt-20 md:pt-24 pb-20">
             <div className="container mx-auto px-4 md:px-6">
                 {/* Header */}
                 <div className="max-w-4xl mx-auto text-center mb-12 space-y-4">

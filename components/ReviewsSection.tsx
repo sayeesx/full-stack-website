@@ -27,13 +27,13 @@ const reviews = [
 
 export const ReviewsSection = () => {
     return (
-        <section id="reviews" className="py-24 bg-section-bg overflow-hidden">
+        <section id="reviews" className="py-12 md:py-20 bg-section-bg overflow-hidden">
             <div className="container mx-auto px-4 md:px-6">
-                <div className="text-center mb-16">
-                    <h2 className="text-4xl md:text-5xl font-black text-brand-blue uppercase tracking-tight mb-4">
+                <div className="text-center mb-8 md:mb-12">
+                    <h2 className="text-3xl md:text-5xl font-black text-brand-blue uppercase tracking-tight mb-2">
                         REPUBLIC <span className="text-brand-red italic">REVIEWS</span>
                     </h2>
-                    <p className="text-gray-500 font-bold uppercase tracking-widest text-sm">
+                    <p className="text-gray-500 font-bold uppercase tracking-widest text-[10px] md:text-xs">
                         Hear from our community of crunch lovers.
                     </p>
                 </div>
@@ -47,7 +47,7 @@ export const ReviewsSection = () => {
                             viewport={{ once: true, margin: "-50px" }}
                             transition={{ delay: index * 0.1 }}
                             whileHover={{ y: -5 }}
-                            className={`bg-white p-8 md:p-10 rounded-[2rem] md:rounded-[2.5rem] relative group border border-gray-100 ${index >= 2 ? 'hidden md:block' : ''}`}
+                            className={`bg-white p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] relative group border border-gray-100 ${index >= 2 ? 'hidden md:block' : ''}`}
                         >
                             <Quote className="absolute top-8 right-8 text-red-50 text-7xl transform group-hover:scale-110 transition-transform -z-0" />
 

@@ -11,7 +11,7 @@ import Link from 'next/link';
 
 export const Hero = () => {
     return (
-        <section className="relative min-h-[90vh] pt-24 md:pt-32 pb-0 flex flex-col items-center overflow-hidden bg-white">
+        <section className="relative min-h-[90vh] pt-16 md:pt-24 pb-0 flex flex-col items-center overflow-hidden bg-white">
             <ConfettiBackground />
 
             <div className="container mx-auto px-4 md:px-6 relative z-10 flex-grow flex items-center justify-center">

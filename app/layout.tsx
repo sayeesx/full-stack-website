@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 };
 
 import { CartProvider } from "@/context/CartContext";
-import { Navbar } from "@/components/Navbar";
+import { MaintenanceBanner } from "@/components/MaintenanceBanner";
 import { Dock } from "@/components/Dock";
 import { CartDrawer } from "@/components/CartDrawer";
 
@@ -40,7 +40,7 @@ export default function RootLayout({
         className={`${outfit.variable} font-sans antialiased bg-white text-gray-900`}
       >
         <CartProvider>
-          <Navbar />
+          <MaintenanceBanner />
           <Dock />
           <CartDrawer />
           {children}
