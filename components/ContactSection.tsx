@@ -21,10 +21,9 @@ export const ContactSection = () => {
                             </p>
                         </div>
 
-                        {/* Desktop & Mobile Contact Links */}
-                        <div className="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 overflow-x-auto md:overflow-x-visible pb-4 md:pb-0 scrollbar-hide snap-x snap-mandatory">
-
-                            <div className="flex-shrink-0 w-[85%] sm:w-auto snap-center flex items-center gap-4 group justify-start bg-red-50/50 p-4 md:p-0 rounded-2xl md:bg-transparent">
+                        {/* Desktop Contact Links */}
+                        <div className="hidden md:grid grid-cols-2 lg:grid-cols-3 gap-6 pb-4 md:pb-0">
+                            <div className="flex items-center gap-4 group justify-start p-4 md:p-0 rounded-2xl md:bg-transparent">
                                 <div className="w-10 h-10 md:w-12 md:h-12 bg-red-50 text-brand-red rounded-xl flex items-center justify-center shrink-0 group-hover:bg-brand-red group-hover:text-white transition-colors duration-300">
                                     <Phone size={20} className="md:w-6 md:h-6" />
                                 </div>
@@ -34,7 +33,7 @@ export const ContactSection = () => {
                                 </div>
                             </div>
 
-                            <div className="flex-shrink-0 w-[85%] sm:w-auto snap-center flex items-center gap-4 group justify-start bg-blue-50/50 p-4 md:p-0 rounded-2xl md:bg-transparent">
+                            <div className="flex items-center gap-4 group justify-start p-4 md:p-0 rounded-2xl md:bg-transparent">
                                 <div className="w-10 h-10 md:w-12 md:h-12 bg-blue-50 text-brand-blue rounded-xl flex items-center justify-center shrink-0 group-hover:bg-brand-blue group-hover:text-white transition-colors duration-300">
                                     <MessageCircle size={20} className="md:w-6 md:h-6" />
                                 </div>
@@ -44,7 +43,7 @@ export const ContactSection = () => {
                                 </div>
                             </div>
 
-                            <div className="flex-shrink-0 w-[85%] sm:w-auto snap-center flex items-center gap-4 group justify-start bg-gray-50/50 p-4 md:p-0 rounded-2xl md:bg-transparent">
+                            <div className="flex items-center gap-4 group justify-start p-4 md:p-0 rounded-2xl md:bg-transparent">
                                 <div className="w-10 h-10 md:w-12 md:h-12 bg-gray-50 text-gray-400 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-brand-blue group-hover:text-white transition-colors duration-300">
                                     <MapPin size={20} className="md:w-6 md:h-6" />
                                 </div>
@@ -53,6 +52,27 @@ export const ContactSection = () => {
                                     <p className="text-brand-blue font-black text-sm md:text-lg">Crunch Valley, CV</p>
                                 </div>
                             </div>
+                        </div>
+
+                        {/* Mobile Contact Row */}
+                        <div className="flex md:hidden justify-between items-center bg-gray-50 py-3 px-2 rounded-2xl border border-gray-100 mt-4">
+                            <a href="tel:+1555123FRY" className="flex flex-col items-center flex-1 text-center group">
+                                <Phone className="text-brand-red mb-1.5" size={18} />
+                                <span className="text-[9px] font-black uppercase tracking-wider text-brand-blue leading-none">Call Us</span>
+                                <span className="text-[8px] font-bold text-gray-400 mt-1 leading-none tracking-tight">+1 555-123-FRY</span>
+                            </a>
+                            <div className="w-px h-8 bg-gray-200"></div>
+                            <a href="https://wa.me/1555999CRUNCH" className="flex flex-col items-center flex-1 text-center group">
+                                <MessageCircle className="text-brand-blue mb-1.5" size={18} />
+                                <span className="text-[9px] font-black uppercase tracking-wider text-brand-blue leading-none">WhatsApp</span>
+                                <span className="text-[8px] font-bold text-gray-400 mt-1 leading-none tracking-tight">+1 555-999-CRUNCH</span>
+                            </a>
+                            <div className="w-px h-8 bg-gray-200"></div>
+                            <a href="#" className="flex flex-col items-center flex-1 text-center group">
+                                <MapPin className="text-gray-400 mb-1.5" size={18} />
+                                <span className="text-[9px] font-black uppercase tracking-wider text-brand-blue leading-none">Location</span>
+                                <span className="text-[8px] font-bold text-gray-400 mt-1 leading-none tracking-tight">Crunch Valley</span>
+                            </a>
                         </div>
 
                         {/* Map Placeholder */}

@@ -52,11 +52,13 @@ export const MaintenanceBanner = () => {
                         }}
                         className="flex whitespace-nowrap w-[200%]"
                     >
-                        <p className="w-1/2 text-[8px] font-black uppercase tracking-[0.1em] leading-tight text-center">
+                        <p className="w-1/2 text-[8px] font-black uppercase tracking-[0.1em] leading-tight text-center px-4">
                             our store is currently under maintanence, bookings open once everythings ready, thanks for your patience
+                            <span className="mx-4 text-white/50">•</span>
                         </p>
-                        <p className="w-1/2 text-[8px] font-black uppercase tracking-[0.1em] leading-tight text-center">
+                        <p className="w-1/2 text-[8px] font-black uppercase tracking-[0.1em] leading-tight text-center px-4">
                             our store is currently under maintanence, bookings open once everythings ready, thanks for your patience
+                            <span className="mx-4 text-white/50">•</span>
                         </p>
                     </motion.div>
                 </div>
