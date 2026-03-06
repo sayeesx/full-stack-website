@@ -6,14 +6,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ShoppingCart, Menu, X, ChevronRight } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
 import { Button } from './ui/Button';
-import { CartDrawer } from './CartDrawer';
 
 export const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const [isCartOpen, setIsCartOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMounted, setIsMounted] = useState(false);
-    const { totalItems } = useCart();
+    const { totalItems, setIsCartOpen } = useCart();
 
     useEffect(() => {
         setIsMounted(true);
@@ -41,8 +39,8 @@ export const Navbar = () => {
                     <div className="flex items-center justify-between">
                         {/* Logo */}
                         <Link href="/" className="flex items-center gap-2">
-                            <div className="w-10 h-10 bg-brand-red rounded-lg flex items-center justify-center transform rotate-3">
-                                <span className="text-white font-black text-xl">C</span>
+                            <div className="w-10 h-10 transform rotate-3 overflow-hidden rounded-lg">
+                                <img src="/favicon.png" alt="Chick Republic" className="w-full h-full object-contain" />
                             </div>
                             <div className="flex flex-col">
                                 <span className={`font-black text-xl leading-none ${isScrolled ? 'text-brand-blue' : 'text-brand-red'}`}>
@@ -125,8 +123,6 @@ export const Navbar = () => {
                     )}
                 </AnimatePresence>
             </nav>
-
-            <CartDrawer isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
         </>
     );
 };

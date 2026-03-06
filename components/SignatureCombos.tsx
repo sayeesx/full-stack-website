@@ -13,27 +13,27 @@ export const SignatureCombos = () => {
     const combos = menuItems.filter(item => item.category === 'Combos');
 
     return (
-        <section className="py-24 bg-brand-blue text-white overflow-hidden relative">
+        <section className="py-12 md:py-24 bg-brand-blue relative overflow-hidden">
             {/* Abstract Background Shapes */}
             <div className="absolute top-0 right-0 w-96 h-96 bg-brand-red opacity-10 blur-[100px] rounded-full -mr-48 -mt-48" />
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-red-600 opacity-5 blur-[100px] rounded-full -ml-48 -mb-48" />
 
             <div className="container mx-auto px-4 md:px-6 relative z-10">
-                <div className="text-center mb-12 md:mb-20 space-y-4">
+                <div className="text-center mb-10 md:mb-20">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="flex items-center justify-center gap-2 text-brand-red font-black uppercase tracking-[0.2em] md:tracking-[0.4em] text-[10px] md:text-xs"
+                        className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 text-white rounded-full font-black text-[10px] md:text-xs uppercase tracking-widest mb-4 border border-white/20"
                     >
-                        <Sparkles size={14} />
-                        Exclusive Deals
+                        Exclusive <span className="text-blue-300 italic">Deals</span>
                     </motion.div>
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-3xl md:text-6xl font-black uppercase tracking-tight"
+                        transition={{ delay: 0.1 }}
+                        className="text-3xl md:text-6xl font-black text-white uppercase tracking-tighter"
                     >
                         SIGNATURE <span className="text-brand-red italic">COMBOS</span>
                     </motion.h2>

@@ -38,7 +38,7 @@ export const ReviewsSection = () => {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                     {reviews.map((item, index) => (
                         <motion.div
                             key={item.name}
@@ -46,8 +46,8 @@ export const ReviewsSection = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true, margin: "-50px" }}
                             transition={{ delay: index * 0.1 }}
-                            whileHover={{ y: -10 }}
-                            className="bg-white p-10 rounded-[2.5rem] shadow-premium relative group border border-gray-50"
+                            whileHover={{ y: -5 }}
+                            className={`bg-white p-8 md:p-10 rounded-[2rem] md:rounded-[2.5rem] relative group border border-gray-100 ${index >= 2 ? 'hidden md:block' : ''}`}
                         >
                             <Quote className="absolute top-8 right-8 text-red-50 text-7xl transform group-hover:scale-110 transition-transform -z-0" />
 

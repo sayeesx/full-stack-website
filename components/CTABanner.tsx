@@ -21,7 +21,7 @@ export const CTABanner = () => {
                     <div className="absolute bottom-0 left-0 w-48 h-48 bg-brand-blue opacity-20 rounded-full -translate-x-1/2 translate-y-1/2" />
 
                     <div className="relative z-10 space-y-6 md:space-y-8">
-                        <h2 className="text-4xl md:text-8xl font-black uppercase tracking-tighter leading-[0.9]">
+                        <h2 className="text-3xl md:text-8xl font-black uppercase tracking-tighter leading-[0.85]">
                             CRAVING <br />
                             <span className="italic text-white/90">CRUNCH?</span>
                         </h2>

@@ -59,18 +59,18 @@ export const Hero = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.3 }}
-                            className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6 px-4"
+                            className="flex flex-row items-center justify-center gap-2 md:gap-6 px-2 md:px-4"
                         >
-                            <Link href="/menu" className="w-full sm:w-auto">
-                                <Button variant="primary" size="lg" className="group text-lg md:text-xl px-8 md:px-12 py-5 md:py-6 w-full">
+                            <Link href="/menu" className="flex-1 sm:flex-none">
+                                <Button variant="primary" size="lg" className="group text-sm md:text-xl px-4 md:px-12 py-4 md:py-6 w-full">
                                     Order Now
-                                    <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
+                                    <ArrowRight className="ml-1 md:ml-2 group-hover:translate-x-1 transition-transform" size={16} />
                                 </Button>
                             </Link>
-                            <Link href="/menu" className="w-full sm:w-auto">
-                                <Button variant="outline" size="lg" className="group text-lg md:text-xl px-8 md:px-12 py-5 md:py-6 w-full">
-                                    <Play className="mr-2 fill-brand-red" size={20} />
-                                    View Menu
+                            <Link href="/menu" className="flex-1 sm:flex-none">
+                                <Button variant="outline" size="lg" className="group text-sm md:text-xl px-4 md:px-12 py-4 md:py-6 w-full text-brand-blue">
+                                    <Play className="mr-1 md:mr-2 fill-brand-red" size={16} />
+                                    Menu
                                 </Button>
                             </Link>
                         </motion.div>

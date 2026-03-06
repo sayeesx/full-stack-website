@@ -11,6 +11,10 @@ export const metadata: Metadata = {
   title: "Chick Republic | Fry Harder",
   description: "Premium cloud kitchen serving the crispiest, most flavorful fried chicken. Experience the crunch with Chick Republic.",
   keywords: ["fried chicken", "cloud kitchen", "food delivery", "chick republic", "crispy chicken", "fast food"],
+  icons: {
+    icon: "/favicon.png",
+    apple: "/favicon.png",
+  },
   openGraph: {
     title: "Chick Republic | Fry Harder",
     description: "Premium fried chicken cloud kitchen.",
@@ -21,6 +25,7 @@ export const metadata: Metadata = {
 };
 
 import { CartProvider } from "@/context/CartContext";
+import { Navbar } from "@/components/Navbar";
 import { Dock } from "@/components/Dock";
 import { CartDrawer } from "@/components/CartDrawer";
 
@@ -35,6 +40,7 @@ export default function RootLayout({
         className={`${outfit.variable} font-sans antialiased bg-white text-gray-900`}
       >
         <CartProvider>
+          <Navbar />
           <Dock />
           <CartDrawer />
           {children}
