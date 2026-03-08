@@ -43,6 +43,7 @@ export const CartDrawer: React.FC = () => {
                             <OrderTrackingTimeline
                                 onClose={() => setIsCheckoutStarted(false)}
                                 foodImage={cart.length > 0 ? cart[0].image : "/burger-combo.jpeg"}
+                                items={cart}
                             />
                         ) : (
                             <>
@@ -86,25 +87,28 @@ export const CartDrawer: React.FC = () => {
                                             <motion.div
                                                 layout
                                                 key={item.id}
-                                                className="flex gap-4 p-4 rounded-3xl bg-gray-50 border border-gray-100 group"
+                                                className="flex items-center gap-4 p-4 rounded-3xl bg-gray-50 border border-gray-100 group transition-all hover:bg-white hover:shadow-md"
                                             >
-                                                <div className="w-20 h-20 rounded-2xl overflow-hidden shrink-0 border-2 border-white shadow-sm">
+                                                <div className="w-20 h-20 rounded-2xl overflow-hidden shrink-0 border-2 border-white shadow-md">
                                                     <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
                                                 </div>
-                                                <div className="flex-1 space-y-2">
-                                                    <div className="flex justify-between">
-                                                        <h4 className="font-black text-brand-blue uppercase text-sm leading-tight">{item.name}</h4>
+                                                <div className="flex-1 min-w-0 space-y-1">
+                                                    <div className="flex justify-between items-start gap-2">
+                                                        <div className="flex-1 min-w-0">
+                                                            <h4 className="font-black text-brand-blue uppercase text-sm leading-tight truncate">{item.name}</h4>
+                                                            <p className="text-[10px] font-medium text-gray-400 line-clamp-1 mt-0.5">{item.description}</p>
+                                                        </div>
                                                         <button
                                                             onClick={() => removeFromCart(item.id)}
-                                                            className="text-gray-300 hover:text-brand-red transition-colors"
+                                                            className="text-gray-300 hover:text-brand-red transition-colors shrink-0"
                                                         >
                                                             <Trash2 size={16} />
                                                         </button>
                                                     </div>
-                                                    <p className="text-brand-red font-black text-sm">${item.price.toFixed(2)}</p>
 
-                                                    <div className="flex items-center justify-between pt-1">
-                                                        <div className="flex items-center bg-white rounded-full px-2 py-1 shadow-sm border border-gray-100">
+                                                    <div className="flex items-center justify-between pt-2">
+                                                        <p className="text-brand-red font-black text-xs md:text-sm tracking-tight">${item.price.toFixed(2)}</p>
+                                                        <div className="flex items-center bg-white rounded-full px-2 py-1 shadow-sm border border-gray-100 scale-90 origin-right">
                                                             <button
                                                                 onClick={() => updateQuantity(item.id, item.quantity - 1)}
                                                                 className="p-1 hover:text-brand-red transition-colors"
@@ -119,9 +123,6 @@ export const CartDrawer: React.FC = () => {
                                                                 <Plus size={14} />
                                                             </button>
                                                         </div>
-                                                        <span className="font-black text-brand-blue text-sm">
-                                                            ${(item.price * item.quantity).toFixed(2)}
-                                                        </span>
                                                     </div>
                                                 </div>
                                             </motion.div>

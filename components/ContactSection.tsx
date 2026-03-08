@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Phone, MapPin, Send } from 'lucide-react';
 import { Button } from './ui/Button';
@@ -113,6 +114,21 @@ export const ContactSection = () => {
                             <Button variant="primary" size="md" fullWidth className="group py-3 md:py-4">
                                 Send Message <Send className="ml-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" size={14} />
                             </Button>
+
+                            <div className="pt-2 text-center">
+                                <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-3">Need immediate answers?</p>
+                                <Link href="/support" className="block w-full">
+                                    <Button
+                                        type="button"
+                                        variant="outline"
+                                        size="sm"
+                                        fullWidth
+                                        className="border-2 border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white font-black uppercase tracking-tight py-3"
+                                    >
+                                        Visit Help Center
+                                    </Button>
+                                </Link>
+                            </div>
                         </form>
                     </motion.div>
                 </div>
