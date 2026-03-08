@@ -43,7 +43,6 @@ export const CartDrawer: React.FC = () => {
                             <OrderTrackingTimeline
                                 onClose={() => setIsCheckoutStarted(false)}
                                 foodImage={cart.length > 0 ? cart[0].image : "/burger-combo.jpeg"}
-                                items={cart}
                             />
                         ) : (
                             <>
