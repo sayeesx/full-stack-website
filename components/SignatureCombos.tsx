@@ -59,12 +59,12 @@ export const SignatureCombos = () => {
                             className={`bg-blue-900/40 backdrop-blur-md rounded-2xl md:rounded-[2.5rem] border border-blue-400/30 overflow-hidden flex-col items-center justify-between p-4 sm:p-6 md:p-10 text-center group md:flex w-full mx-auto ${index >= 2 ? 'hidden' : 'flex'}`}
                             style={{ willChange: 'transform, opacity' }}
                         >
-                            <div className="relative flex-grow flex items-center justify-center w-full mb-3 lg:mb-5 rounded-2xl overflow-hidden border border-blue-400/10 aspect-[16/11] sm:aspect-[4/3] shrink-0 bg-blue-950/30">
+                            <div className="relative flex-grow flex items-center justify-center w-full mb-3 lg:mb-5 rounded-2xl overflow-hidden border border-blue-400/10 aspect-[16/9] sm:aspect-[16/10] shrink-0 bg-white shadow-inner">
                                 <NextImage
                                     src={combo.image}
                                     alt={combo.name}
                                     fill
-                                    className="object-contain transform group-hover:scale-105 transition-transform duration-700"
+                                    className="object-cover transform group-hover:scale-110 transition-transform duration-700"
                                 />
                             </div>
                             <div className="mt-auto space-y-1.5 md:space-y-3 w-full">
